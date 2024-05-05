@@ -1,0 +1,36 @@
+:root {
+    /* Primary Colours */
+    --strong-cyan      : hsl(171, 66%, 44%);
+    --light-blue       : hsl(233, 100%, 69%);
+    /* Neutral Colours */
+    --dark-grayish-blue: hsl(210, 10%, 33%);
+    --grayish-blue     : hsl(201, 11%, 66%);
+
+    /* Base font-size */
+    font-size: 18px;
+}
+
+/* Initialization */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+}
+
+body {
+    font-family: "Bai Jamjuree", sans-serif;
+    min-height : 100vh;
+    min-width  : 100vw;
+    overflow   : hidden;
+}
+
+.attribution {
+    font-size : .8em;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
