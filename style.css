@@ -19,11 +19,91 @@
     padding   : 0;
 }
 
+/* General Styles */
 body {
     font-family: "Bai Jamjuree", sans-serif;
     min-height : 100vh;
     min-width  : 100vw;
     overflow   : hidden;
+    overflow-y : scroll;
+}
+
+section {
+    width: 100%;
+}
+
+h1 {
+    color      : var(--dark-grayish-blue);
+    font-size  : 2.2em;
+    font-weight: 600;
+}
+
+p {
+    color    : var(--grayish-blue);
+    font-size: 1em;
+}
+
+button {
+    border        : 0;
+    border-bottom : 0.2em solid;
+    border-radius : 2em;
+    color         : white;
+    cursor        : pointer;
+    font-family   : "Bai Jamjuree", sans-serif;
+    font-size     : .8em;
+    font-weight   : 500;
+    height        : fit-content;
+    letter-spacing: 0.05em;
+    padding       : .85em 2em 0.65em 2em;
+    width         : fit-content;
+}
+
+button:hover {
+    opacity   : 80%;
+    transition: all .3s;
+}
+
+/* HERO Section */
+.hero-section {
+    align-items        : center;
+    background-image   : url(./images/bg-header-desktop.png);
+    background-position: top;
+    background-repeat  : no-repeat;
+    background-size    : auto 75vh;
+    display            : flex;
+    flex-direction     : column;
+    height             : 100vh;
+    justify-content    : center;
+}
+
+.hero-section img {
+    margin-bottom: 2.5em;
+}
+
+.hero-section p {
+    line-height  : 1.5em;
+    margin-bottom: 1.5em;
+    margin-top   : .8em;
+    text-align   : center;
+    width        : 33.75em;
+}
+
+.hero-section .call-to-actions {
+    align-items    : center;
+    display        : flex;
+    flex-direction : row;
+    gap            : .75em;
+    justify-content: center;
+}
+
+.download-for-ios {
+    background-color: var(--strong-cyan);
+    border-color    : hsl(171, 66%, 38%);
+}
+
+.download-for-mac {
+    background-color: var(--light-blue);
+    border-color    : hsl(233, 100%, 63%);
 }
 
 .attribution {
