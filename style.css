@@ -5,9 +5,9 @@
     /* Neutral Colours */
     --dark-grayish-blue: hsl(210, 10%, 33%);
     --grayish-blue     : hsl(201, 11%, 66%);
-
+    --background-color : hsl(220, 18%, 97%);
     /* Base font-size */
-    font-size: 18px;
+    font-size          : 18px;
 }
 
 /* Initialization */
@@ -26,6 +26,7 @@ body {
     min-width  : 100vw;
     overflow   : hidden;
     overflow-y : scroll;
+    position   : relative;
 }
 
 section {
@@ -40,13 +41,37 @@ h1 {
 
 h2 {
     color      : var(--dark-grayish-blue);
-    font-size  : 2em;
+    font-size  : 1.95em;
+    font-weight: 600;
+}
+
+h3 {
+    color      : var(--dark-grayish-blue);
+    font-size  : 1.5em;
+    font-weight: 600;
+}
+
+h4 {
+    color      : var(--dark-grayish-blue);
+    font-size  : 1.25em;
     font-weight: 600;
 }
 
 p {
     color    : var(--grayish-blue);
     font-size: 1em;
+}
+
+a {
+    color          : var(--dark-grayish-blue);
+    font-size      : 1em;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight    : 500;
+    transition     : all ease-in-out .3s;
 }
 
 button {
@@ -71,14 +96,30 @@ button:hover {
 
 /* Common Styles */
 
+section h2~p {
+    line-height: 1.5em;
+    margin-top : .75em;
+}
+
 .download-for-ios {
     background-color: var(--strong-cyan);
     border-color    : hsl(171, 66%, 38%);
+    box-shadow      : 0px 13px 20px -10px hsla(171, 66%, 50%, 0.5);
 }
 
 .download-for-mac {
     background-color: var(--light-blue);
     border-color    : hsl(233, 100%, 63%);
+    box-shadow      : 0px 13px 20px -10px hsla(233, 100%, 75%, 0.5);
+}
+
+.call-to-actions,
+.download-buttons {
+    align-items    : center;
+    display        : flex;
+    flex-direction : row;
+    gap            : .75em;
+    justify-content: center;
 }
 
 /* HERO Section */
@@ -99,21 +140,11 @@ button:hover {
 }
 
 .hero-section p {
-    line-height  : 1.5em;
-    margin-bottom: 1.5em;
-    margin-top   : .8em;
+    margin-bottom: 2em;
+    margin-top   : 1.25em;
     text-align   : center;
     width        : 33.75em;
 }
-
-.hero-section .call-to-actions {
-    align-items    : center;
-    display        : flex;
-    flex-direction : row;
-    gap            : .75em;
-    justify-content: center;
-}
-
 
 .features-summary-section {
     align-items    : center;
@@ -124,18 +155,178 @@ button:hover {
 }
 
 .features-summary-section p {
-    font-size  : .95em;
-    line-height: 1.5em;
-    margin-top : 1em;
-    text-align : center;
-    width      : 38.75em;
+    font-size : .95em;
+    text-align: center;
+    width     : 38.75em;
+}
+
+.feature-overview-section {
+    display        : flex;
+    flex-direction : row;
+    height         : fit-content;
+    justify-content: space-between;
+    padding-bottom : 7.5em;
+    padding-top    : 3em;
+}
+
+.feature-overview-section img {
+    left    : -5em;
+    position: relative;
+    width   : 55%;
+}
+
+.features-group {
+    align-items   : flex-start;
+    display       : flex;
+    flex-direction: column;
+    gap           : 4em;
+    position      : relative;
+    top           : 4em;
+    width         : 45%;
+}
+
+.feature p {
+    line-height: 1.75em;
+    margin-top : .25em;
+    width      : 22em;
+}
+
+.cross-platform-compatibility-section {
+    margin-bottom: 3em;
+    text-align   : center;
+}
+
+.cross-platform-compatibility-section p {
+    margin-bottom: 5em;
+    margin-left  : auto;
+    margin-right : auto;
+    width        : 37em;
+}
+
+.benefits-section {
+    align-items    : center;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    text-align     : center;
+}
+
+.benefits-group {
+    align-content  : center;
+    display        : flex;
+    flex-direction : row;
+    gap            : 2.5em;
+    justify-content: center;
+    margin-bottom  : 7.5em;
+    margin-top     : 5em;
+    width          : 70em;
+}
+
+.benefit {
+    width: 22em;
+}
+
+.benefit h4 {
+    margin-bottom: .5em;
+    margin-top   : 1.5em;
+}
+
+.benefit p {
+    line-height: 1.75em;
+}
+
+.trusted-by-section {
+    align-items    : center;
+    display        : flex;
+    flex-direction : row;
+    gap            : 7.25em;
+    justify-content: center;
+    margin-bottom  : 7.5em;
+    margin-left    : auto;
+    margin-right   : auto;
+    margin-top     : 2.5em;
+    width          : 70em;
+}
+
+.trusted-by-section>*:hover {
+    cursor    : pointer;
+    filter    : brightness(80%);
+    transition: all ease-in-out .3s;
+}
+
+.download-section {
+    align-items    : center;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    text-align     : center;
+}
+
+.download-section p {
+    margin-bottom: 4em;
+    width        : 38em;
+}
+
+.download-buttons {
+    margin-bottom: 7.5em;
+}
+
+.footer-section {
+    background-color: var(--background-color);
+    padding-bottom  : 4em;
+    padding-top     : 3.5em;
+}
+
+.container {
+    align-items    : center;
+    display        : flex;
+    justify-content: space-between;
+    margin-left    : auto;
+    margin-right   : auto;
+    width          : 70em;
+}
+
+.links-column-group {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    width          : 60%;
+}
+
+.column {
+    align-items   : flex-start;
+    display       : flex;
+    flex-direction: column;
+    gap           : 1em;
+}
+
+.column img {
+    width: 3em;
+}
+
+.social-icons-group {
+    align-items    : center;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    width          : 10%;
+}
+
+.social-icons-group>*:hover {
+    opacity   : 80%;
+    transition: all ease-in-out .3s;
 }
 
 .attribution {
+    bottom    : 1em;
     font-size : .8em;
+    left      : 50%;
+    position  : absolute;
     text-align: center;
+    transform : translateX(-50%);
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color      : var(--light-blue);
+    font-weight: 500;
 }
