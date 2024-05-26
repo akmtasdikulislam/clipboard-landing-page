@@ -763,8 +763,6 @@ button:hover {
         height         : auto;
         justify-content: center;
         margin-bottom  : 8em;
-        margin-left    : 0;
-        margin-right   : 0;
         padding        : 0;
     }
 
@@ -803,7 +801,7 @@ button:hover {
         align-items   : center;
         display       : flex;
         flex-direction: column;
-        height        : 29em;
+        height        : 30em;
         padding-top   : 3.5em;
     }
 
