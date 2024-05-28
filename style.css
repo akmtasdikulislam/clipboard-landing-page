@@ -134,6 +134,7 @@ button:hover {
     flex-direction     : column;
     height             : 35.75em;
     justify-content    : center;
+    /* Defining a parent container to adjust its child .call-to-actions width to present the CTA buttons responsively.*/
     container-name     : heroSection;
     container-type     : inline-size;
 }
@@ -151,6 +152,7 @@ button:hover {
     width        : 33.75em;
 }
 
+/* when the parent conatiner .hero-section hits the max-width of 543px the buttons within the .call-to-actions child container gets set to flex-direction to column in order to present the CTA buttons responsively. */
 @container heroSection (max-width:543px) {
     .call-to-actions {
         width         : 100%;
@@ -218,8 +220,8 @@ button:hover {
 
 /* CROSS PLATFORM COMPATIBILITY Section */
 .cross-platform-compatibility-section {
-    height    : 48.27em;
-    margin-top: .25em;
+    height    : 44.27em;
+    margin-top: 8.35em;
     text-align: center;
 }
 
@@ -240,6 +242,7 @@ button:hover {
     flex-direction : column;
     height         : 21em;
     justify-content: center;
+    margin-top     : 4em;
     text-align     : center;
 }
 
@@ -289,8 +292,8 @@ button:hover {
     margin-left    : auto;
     margin-right   : auto;
     margin-top     : 5.55em;
-    width          : 61.75em;
     max-width      : 100%;
+    width          : 61.75em;
 }
 
 .trusted-by-section>*:hover {
@@ -307,22 +310,24 @@ button:hover {
     justify-content: center;
     margin-top     : 5.4em;
     text-align     : center;
+    /* Defining a parent container to adjust its child .download-buttons width to present the CTA buttons responsively.*/
     container-name : downloadSection;
     container-type : inline-size;
 }
 
+/* when the parent conatiner .download-section hits the max-width of 543px the buttons within the .download-buttons child container gets set to flex-direction to column in order to present the dwonload buttons responsively. */
 @container downloadSection (max-width:543px) {
     .download-buttons {
-        width         : 100%;
         display       : flex;
         flex-direction: column;
         gap           : 2em;
         padding       : 0 2em;
+        width         : 100%;
     }
 
     .download-buttons button {
-        width : 100%;
         margin: 0;
+        width : 100%;
     }
 }
 
@@ -348,31 +353,33 @@ button:hover {
 
 .container {
     align-items    : center;
+    /* Defining a parent container for container queries to present the footer responsively */
+    container-name : container;
+    container-type : inline-size;
     display        : flex;
     justify-content: space-between;
     margin-left    : auto;
     margin-right   : auto;
-    width          : 61.6em;
-    container-type : inline-size;
-    container-name : container;
+    max-width      : 61.6em;
 }
 
+/* When the parent contianer hits the width of 640px, the .container turns into grid to showcase the footer in a responsive way */
 @container (max-width: 640px) {
     .container {
         display              : grid;
+        grid-auto-flow       : column;
         grid-template-columns: 1fr;
         grid-template-rows   : 3.5em 1.5em;
-        grid-auto-flow       : column;
-        row-gap              : 2em;
         place-items          : center;
+        row-gap              : 2em;
     }
 }
 
 @container container (max-width: 576px) {
     .links-column-group {
-        min-width      : 100%;
-        justify-content: space-between;
         gap            : 1.5em;
+        justify-content: space-between;
+        min-width      : 100%;
     }
 
     .column {
@@ -392,6 +399,11 @@ button:hover {
     display       : flex;
     flex-direction: column;
     gap           : 1em;
+}
+
+.column a:hover {
+    color     : var(--strong-cyan);
+    transition: all ease-in-out .2s;
 }
 
 .column img {
@@ -433,11 +445,39 @@ button:hover {
     font-weight: 500;
 }
 
+/* When the viewport width is more than 1920px, the image within the .feature-overview-section gets a fixed width so that it dosen't grow too big on larger screens */
+@media(min-width:1920px) {
+    .feature-overview-section {
+        align-items    : center;
+        gap            : 5em;
+        justify-content: center;
+        margin-bottom  : 5em;
+    }
+
+    .feature-overview-section img {
+        max-width: 55.75em;
+        left     : initial;
+    }
+
+    .features-group {
+        top: -3.5em;
+    }
+}
+
+/* Between the viewport width of 1024 and 1366px, removing the top spacing above the .features-group to position it to the center with the image right beside it.  */
+@media (min-width:1024px) and (max-width:1366px) {
+    .features-group {
+        top: initial;
+        gap: 5vw;
+    }
+}
+
 @media (max-width:1024px) {
 
     /* Laptops */
-    .feature-overview-section {
-        margin-bottom: 4em;
+
+    .feature-overview-section img {
+        min-width: 29.75em;
     }
 
     .features-group {
@@ -446,7 +486,12 @@ button:hover {
     }
 
     .feature p {
-        width: 100%;
+        width        : 100%;
+        padding-right: 2em;
+    }
+
+    .cross-platform-compatibility-section {
+        height: fit-content;
     }
 
     .cross-platform-compatibility-section img {
@@ -537,8 +582,8 @@ button:hover {
     }
 
     .feature-overview-section img {
-        left : initial;
-        width: 70%;
+        left     : initial;
+        min-width: 70%;
     }
 
     .features-group {
